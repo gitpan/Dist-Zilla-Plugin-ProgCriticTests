@@ -11,6 +11,11 @@
       "version" : 2
    },
    "name" : "Dist-Zilla-Plugin-ProgCriticTests",
+   "no_index" : {
+      "directory" : [
+         "corpus"
+      ]
+   },
    "prereqs" : {
       "configure" : {
          "requires" : {
@@ -42,7 +47,7 @@
       }
    },
    "release_status" : "stable",
-   "version" : "1.101582",
+   "version" : "1.101583",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -184,6 +189,11 @@
             "class" : "Dist::Zilla::Plugin::ProgCriticTests",
             "name" : "ProgCriticTests",
             "version" : "1.101570"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::MetaNoIndex",
+            "name" : "MetaNoIndex",
+            "version" : "1.101550"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
