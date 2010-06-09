@@ -47,7 +47,7 @@
       }
    },
    "release_status" : "stable",
-   "version" : "1.101583",
+   "version" : "1.101600",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
