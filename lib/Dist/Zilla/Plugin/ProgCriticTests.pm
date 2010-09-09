@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::ProgCriticTests;
 BEGIN {
-  $Dist::Zilla::Plugin::ProgCriticTests::VERSION = '1.101601';
+  $Dist::Zilla::Plugin::ProgCriticTests::VERSION = '1.102520';
 }
 # ABSTRACT: Gradually enforce coding standards with Dist::Zilla
 
@@ -15,14 +15,14 @@ with 'Dist::Zilla::Role::TextTemplate';
 
 has step_size    => ( is => 'ro', isa => 'Int', default => 0                     );
 has severity     => ( is => 'ro', isa => 'Int', default => 0                     );
-has exclude      => ( is => 'ro', isa => 'Str', default => undef                 );
-has profile      => ( is => 'ro', isa => 'Str', default => undef                 );
+has exclude      => ( is => 'ro', isa => 'Str'                                   );
+has profile      => ( is => 'ro', isa => 'Str'                                   );
 has history_file => ( is => 'ro', isa => 'Str', default => '.perlcritic_history' );
 
 
 around add_file => sub {
     my ($orig, $self, $file) = @_;
-    
+
     my $test_content = $self->fill_in_string(
         $file->content,
         {
@@ -34,12 +34,12 @@ around add_file => sub {
             history_file    => \$self->history_file,
         },
     );
-    
+
     my $mem_file = Dist::Zilla::File::InMemory->new({
         name    => $file->name,
         content => $test_content,
     });
-    
+
     return $self->$orig($mem_file);
 };
 
@@ -58,7 +58,7 @@ Dist::Zilla::Plugin::ProgCriticTests - Gradually enforce coding standards with D
 
 =head1 VERSION
 
-version 1.101601
+version 1.102520
 
 =head1 SYNOPSIS
 
@@ -124,7 +124,7 @@ L<http://github.com/wchristian/Dist-Zilla-Plugin-ProgCriticTests>
 
 =head1 AUTHOR
 
-  Christian Walde <mithaldu@yahoo.de>
+Christian Walde <mithaldu@yahoo.de>
 
 =head1 COPYRIGHT AND LICENSE
 
@@ -149,11 +149,11 @@ use lib 'lib';
 use Test::More;
 use Try::Tiny;
 use Path::Class qw(file);
-    
-try { 
+
+try {
     use Test::Perl::Critic::Progressive qw( :all );
 }
-catch {    
+catch {
     plan skip_all => 'T::P::C::Progressive required for this test' if $@;
 };
 
@@ -161,7 +161,7 @@ my $root_path = q<{{ $root_path }}>;
 my $step_size = {{ $step_size }};
 my $severity = {{ $severity }};
 my $exclude = [qw< {{ $exclude }} >];
-    
+
 my $history_file = q<{{ $history_file }}>;
 $history_file = qq<$root_path/$history_file> if file($history_file)->is_relative;
 
@@ -174,18 +174,18 @@ exit;
 
 sub run_test {
     my ( $history_file, $step_size, $exclude, $severity, $profile ) = @_;
-    
+
     set_history_file( $history_file );
     set_total_step_size( $step_size );
-    
+
     my %args;
     $args{-severity} = $severity if $severity;
     $args{-profile} = $profile if $profile;
     $args{-exclude} = $exclude if $exclude;
-    
+
     set_critic_args( %args ) if keys %args;
-    
+
     progressive_critic_ok();
-    
+
     return;
 }

@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
- BEGIN { require 5.008; } 
+BEGIN { require 5.008; }
 
 use ExtUtils::MakeMaker 6.31;
 
@@ -36,7 +36,7 @@ my %WriteMakefileArgs = (
     'Dist::Zilla::Role::TextTemplate' => '0',
     'Moose' => '0'
   },
-  'VERSION' => '1.101601',
+  'VERSION' => '1.102520',
   'test' => {
     'TESTS' => 't/*.t'
   }
