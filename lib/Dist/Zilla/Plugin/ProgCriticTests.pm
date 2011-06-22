@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::ProgCriticTests;
 BEGIN {
-  $Dist::Zilla::Plugin::ProgCriticTests::VERSION = '1.102520';
+  $Dist::Zilla::Plugin::ProgCriticTests::VERSION = '1.111730';
 }
 # ABSTRACT: Gradually enforce coding standards with Dist::Zilla
 
@@ -58,7 +58,7 @@ Dist::Zilla::Plugin::ProgCriticTests - Gradually enforce coding standards with D
 
 =head1 VERSION
 
-version 1.102520
+version 1.111730
 
 =head1 SYNOPSIS
 
@@ -128,7 +128,7 @@ Christian Walde <mithaldu@yahoo.de>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Christian Walde.
+This software is copyright (c) 2011 by Christian Walde.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
@@ -151,7 +151,8 @@ use Try::Tiny;
 use Path::Class qw(file);
 
 try {
-    use Test::Perl::Critic::Progressive qw( :all );
+    require Test::Perl::Critic::Progressive;
+    Test::Perl::Critic::Progressive->import( ':all' );
 }
 catch {
     plan skip_all => 'T::P::C::Progressive required for this test' if $@;

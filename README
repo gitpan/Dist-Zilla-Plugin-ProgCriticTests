@@ -1,11 +1,11 @@
 
 
 This archive contains the distribution Dist-Zilla-Plugin-ProgCriticTests,
-version 1.102520:
+version 1.111730:
 
   Gradually enforce coding standards with Dist::Zilla
 
-This software is copyright (c) 2010 by Christian Walde.
+This software is copyright (c) 2011 by Christian Walde.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

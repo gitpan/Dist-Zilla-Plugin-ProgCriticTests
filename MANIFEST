@@ -4,7 +4,6 @@ MANIFEST
 META.json
 META.yml
 Makefile.PL
-ProgCriticTests.kpf
 README
 corpus/DZF/critic_profile
 corpus/DZF/lib/DZT/Sample.pm
