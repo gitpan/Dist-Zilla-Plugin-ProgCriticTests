@@ -5,10 +5,12 @@ META.json
 META.yml
 Makefile.PL
 README
+corpus/DZF/basic_profile
 corpus/DZF/critic_profile
 corpus/DZF/lib/DZT/Sample.pm
 corpus/DZF/perlcritic_history
 corpus/DZF/t/basic.t
+corpus/DZT/basic_profile
 corpus/DZT/lib/DZT/Sample.pm
 corpus/DZT/perlcritic_history
 corpus/DZT/t/basic.t

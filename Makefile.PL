@@ -36,7 +36,7 @@ my %WriteMakefileArgs = (
     'Dist::Zilla::Role::TextTemplate' => '0',
     'Moose' => '0'
   },
-  'VERSION' => '1.111730',
+  'VERSION' => '1.111750',
   'test' => {
     'TESTS' => 't/*.t'
   }

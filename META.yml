@@ -31,7 +31,7 @@ requires:
   Dist::Zilla::Role::TextTemplate: 0
   Moose: 0
   perl: 5.008
-version: 1.111730
+version: 1.111750
 x_Dist_Zilla:
   plugins:
     -

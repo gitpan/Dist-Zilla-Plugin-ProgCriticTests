@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::ProgCriticTests;
 BEGIN {
-  $Dist::Zilla::Plugin::ProgCriticTests::VERSION = '1.111730';
+  $Dist::Zilla::Plugin::ProgCriticTests::VERSION = '1.111750';
 }
 # ABSTRACT: Gradually enforce coding standards with Dist::Zilla
 
@@ -58,7 +58,7 @@ Dist::Zilla::Plugin::ProgCriticTests - Gradually enforce coding standards with D
 
 =head1 VERSION
 
-version 1.111730
+version 1.111750
 
 =head1 SYNOPSIS
 
