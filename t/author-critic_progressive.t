@@ -19,13 +19,14 @@ use Try::Tiny;
 use Path::Class qw(file);
 
 try {
-    use Test::Perl::Critic::Progressive qw( :all );
+    require Test::Perl::Critic::Progressive;
+    Test::Perl::Critic::Progressive->import( ':all' );
 }
 catch {
     plan skip_all => 'T::P::C::Progressive required for this test' if $@;
 };
 
-my $root_path = q<D:\Dist-Zilla-Plugin-ProgCriticTests>;
+my $root_path = q</home/shlomif/progs/perl/cpan/Dist/Zilla/Dist-Zilla-Plugin-ProgCriticTests>;
 my $step_size = 0;
 my $severity = 4;
 my $exclude = [qw< Modules::RequireExplicitPackage ProhibitMatchVars ProhibitCallsToUndeclaredSubs >];

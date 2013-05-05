@@ -1,4 +1,5 @@
 Changes
+Changes~
 LICENSE
 MANIFEST
 META.json
@@ -19,6 +20,7 @@ dist.ini
 lib/Dist/Zilla/Plugin/ProgCriticTests.pm
 t/author-critic_progressive.t
 t/basic.t
+t/basic.t~
 t/lib/Test/DZil.pm
 t/release-kwalitee.t
 t/release-pod-coverage.t
